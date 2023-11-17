@@ -10,16 +10,18 @@ def index():
 @app.route('/weather', methods=['POST'])
 def get_weather():
     city = request.form['city']
-    api_key = '7b3a3aacea0a6f77258ad667236054a9'
-    weather_url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}'
+    url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&lan=es&appid=7b3a3aacea0a6f77258ad667236054a9'
     
-    response = requests.get(weather_url)
-    weather_data = response.json()
+    r = requests.get(url)
+    data = r.json()
 
-    temperature = weather_data['main']['temp']
-    description = weather_data['weather'][0]['description']
+    humidity = data['main']['humidity']
+    pressure = data['main']['pressure']
+    wind = data['wind']['speed']
+    description = data['weather'][0]['description']
+    temp = data['main']['temp']
 
-    return render_template('index.html', city=city, temperature=temperature, description=description)
+    return render_template('weather.html', city=city, temperature=temp, description=description, wind=wind, humidity=humidity, pressure=pressure)
 
 if __name__ == '__main__':
     app.run(debug=True)
