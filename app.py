@@ -21,7 +21,7 @@ def get_weather():
     description = data['weather'][0]['description']
     temp = data['main']['temp']
 
-    return render_template('index.html', city=city, temperature=temp, description=description, wind=wind, humidity=humidity, pressure=pressure)
+    return render_template('weather.html', city=city, temperature=temp, description=description, wind=wind, humidity=humidity, pressure=pressure)
 
 if __name__ == '__main__':
     app.run(debug=True)
