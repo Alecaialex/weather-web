@@ -8,7 +8,7 @@ def index():
     return render_template('index.html')
 
 @app.route('/weather', methods=['POST'])
-<<<<<<< Updated upstream
+
 def weather():
     location = request.form['location']
     api_key = ''
@@ -16,7 +16,7 @@ def weather():
     response = requests.get(api_url)
     weather_info = response.json()
     return render_template('weather.html', location=location, weather_info=weather_info)
-=======
+
 def get_weather():
     city = request.form['city']
     api_key = '094285e26dd944a6b88215434231711'
@@ -40,7 +40,7 @@ def get_weather():
     except KeyError as e:
         print(f"Error: {e}")
         return render_template('weather.html', error="Error retrieving weather data. Please try again.")
->>>>>>> Stashed changes
+
 
 if __name__ == '__main__':
     app.run(debug=True)
