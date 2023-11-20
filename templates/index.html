@@ -6,6 +6,18 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Weather App</title>
 </head>
+
+<div class="Request">
+    <form action="/weather" method="post" class="search">
+        <div class="search__wrapper">
+        <input type="text" id="city" placeholder="Enter your city..." class="search__field">
+        <button type="submit" class="fa fa-search search__icon">🔎</button>
+        </div>
+    </form>
+</div>
+
+
+<!--
 <body>
     <h1>Weather App</h1>
     <div class="Request">
@@ -21,3 +33,4 @@
     
 </body>
 </html>
+-->
