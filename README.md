@@ -4,4 +4,4 @@ We did this proyect to practice making a python web server that uses different H
 # How to use
 You first need to run setup.py which will install all the dependencies and ask for your API key then you should always run app.py unless you want to change you API key
 ## Credits
-Thanks to @pipitaf for his help with the proyect frontend
+Thanks to [@pipitaf]( https://github.com/pipitaf ) for his help with the proyect frontend
