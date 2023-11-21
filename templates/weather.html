@@ -3,19 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
     <title>Weather App</title>
 </head>
-<body>
-    {% if city %}
-        <p>City: {{ city }}</p>
-        <p>Temperature: {{ temperature }}</p>
-        <p>Feels like: {{ feelslike }}</p>
-        <p>Description: {{ description }}</p>
-        <p>Wind direction: {{ wind_dir }}</p>
-        <p>Wind speed: {{ wind_speed}}</p>
-        <p>Humidity %: {{ humidity }}</p>
-        <p>Rain in mm: {{ precip }}</p>
-    {% endif %}
+<body id="weatherBody" data-isday="{{ isday }}"
+      data-description="{{ description }}">
+    <div class="card" id="weatherCard">
+        {% if city %}
+            <p>City: {{ city }}</p>
+            <img src="{{ descriptionicon }}" alt="">
+            <p>Temperature: {{ temperature }}ºC</p>
+            <p>Feels like: {{ feelslike }}ºC</p>
+            <p>Description: {{ description }}</p>
+            <p>Wind: {{ wind_speed}} KM/H to {{ wind_dir }}</p>
+            <p>Rain in mm: {{ precip }}</p>
+        {% endif %}
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+    <script>
+        // No comprendo porque esto no funciona en el script.js pero aquí si
+        const body = document.getElementById('weatherBody');
+        const isDay = body.getAttribute('data-isday');
+
+        if (isDay === '0') {
+            body.style.background = 'linear-gradient(#e2fdfd, #88c8ff)'; // Azul clarito
+        } else {
+            body.style.background = 'linear-gradient(#0b5a92, #043570)'; // Azul oscuro
+        }
+    </script>
+
 </body>
+
 </html>
