@@ -10,18 +10,27 @@ def index():
 @app.route('/weather', methods=['POST'])
 def get_weather():
     city = request.form['city']
-    url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&lan=es&appid=7b3a3aacea0a6f77258ad667236054a9'
-    
-    r = requests.get(url)
-    data = r.json()
+    api_key = '094285e26dd944a6b88215434231711'
+    url = f'http://api.weatherapi.com/v1/current.json?key={api_key}&q={city}'
 
-    humidity = data['main']['humidity']
-    pressure = data['main']['pressure']
-    wind = data['wind']['speed']
-    description = data['weather'][0]['description']
-    temp = data['main']['temp']
+    response = requests.get(url)
+    weather_data = response.json()
 
-    return render_template('weather.html', city=city, temperature=temp, description=description, wind=wind, humidity=humidity, pressure=pressure)
+    try:
+        current_data = weather_data['current']
+        temperature_celsius = current_data['temp_c']
+        feelslike = current_data['feelslike_c']
+        description = current_data['condition']['text']
+        wind_dir = current_data['wind_dir']
+        wind_speed = current_data['wind_kph']
+        humidity = current_data['humidity']
+        precip = current_data.get('precip_mm', 'N/A')
+
+        return render_template('weather.html', city=city, temperature=temperature_celsius, feelslike = feelslike, description=description, wind_dir=wind_dir, wind_speed=wind_speed, humidity=humidity, precip=precip)
+
+    except KeyError as e:
+        print(f"Error: {e}")
+        return render_template('weather.html', error="Error retrieving weather data. Please try again.")
 
 if __name__ == '__main__':
     app.run(debug=True)
