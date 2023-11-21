@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import requests
+from config import API_KEY
 
 app = Flask(__name__)
 
@@ -10,14 +11,10 @@ def index():
 @app.route('/weather', methods=['POST'])
 def get_weather():
     city = request.form['city']
-    api_key = '094285e26dd944a6b88215434231711'
-    url = f'http://api.weatherapi.com/v1/current.json?key={api_key}&q={city}'
+    url = f'http://api.weatherapi.com/v1/current.json?key={API_KEY}&q={city}'
 
     response = requests.get(url)
     weather_data = response.json()
-
-    response_wttr = requests.get("https://wttr.in/?format=j1")
-    weather_wttr = response_wttr.json()
 
     try:
         current_data = weather_data['current']
@@ -38,11 +35,6 @@ def get_weather():
     except KeyError as e:
         print(f"Error: {e}")
         return render_template('weather.html', error="Error retrieving weather data. Please try again.")
-
-DIRECTIONS = {
-    ''
-}
-
 
 if __name__ == '__main__':
     app.run(debug=True)
