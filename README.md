@@ -1,7 +1,11 @@
 # Weather Web
-This is a simple website made for checking the weather of a country/city using WeatherAPI  
-We did this proyect to practice making a python web server that uses different HTML pages with some CSS and JavaScript  
-# How to use
-You first need to run setup.py which will install all the dependencies and ask for your API key then you should always run app.py unless you want to change you API key
-## Credits
-Thanks to [@pipitaf]( https://github.com/pipitaf ) for his help with the proyect frontend
+##Overview:
+Weather Web is a simple website built for checking the weather of any country or city using the WeatherAPI. We started this project to practice creating a Python web server with different HTML pages, adding a bit of style with CSS and functionality with JavaScript.
+
+##Getting Started:
+To start, run setup.py – it'll sort out all the dependencies and ask for your API key. After that, just run app.py whenever you want to check the weather unless you're switching API keys.
+
+###Credits:
+Big shoutout to [@pipitaf]( https://github.com/pipitaf ) for helping out with the project's frontend. Much appreciated!
+
+Feel free to explore Weather Web, and reach out if you've got questions or suggestions.
