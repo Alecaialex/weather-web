@@ -1,6 +1,12 @@
 from flask import Flask, render_template, request
 import requests
-from config import API_KEY
+try:
+    from config import API_KEY
+except ImportError:
+    print("You need to execute setup.py first. Press enter to exit...")
+    input()
+    quit()
+    
 
 app = Flask(__name__)
 
