@@ -22,6 +22,16 @@ body h1 {
   padding-bottom: 10%;
 }
 
+body h1.hidden{
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+body h1.visible{
+  opacity: 1;
+  transition: opacity 1.5s ease-in-out;
+}
+
 h1 {
   color: #333;
 }
@@ -162,3 +172,13 @@ form {
   left: 24px;
   transition: top 0.3s ease, left 0.3s ease, fill 0.2s ease 0.2s;
 }
+<<<<<<< Updated upstream
+=======
+
+ /*
+.images {
+  display: flex;
+  justify-content: space-around;
+}
+*/ 
+>>>>>>> Stashed changes

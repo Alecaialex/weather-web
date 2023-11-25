@@ -37,3 +37,15 @@ document.addEventListener('click', function (event) {
         cityInput.value = '';
     }
 });
+
+//Animación título
+document.addEventListener('DOMContentLoaded', function () {
+    const pageTitle = document.getElementById('pageTitle');
+    const searchInput = document.getElementById('city');
+
+    searchInput.addEventListener('click', function () {
+        pageTitle.classList.remove('hidden');
+        pageTitle.classList.add('visible');
+    });
+
+});
