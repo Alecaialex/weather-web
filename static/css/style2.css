@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.5s ease;
+}
+
+.card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 200px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+}
+
+.head{
+    text-align: center;
+    
+}
+
+.head ul{
+    align-items: center;
+    display:flex;
+    flex-direction: row;
+    padding:0;
+
+    
+}
+
+.head img{
+    display: flex;
+    position:relative;
+    right:9px;
+}
+
+.city{
+    
+}
+
+.head p{
+    margin-left:auto;
+}
