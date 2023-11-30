@@ -20,6 +20,9 @@ body {
 
 .head{
     text-align: center;
+    border-bottom: 2px dotted grey ;
+    position:relative;
+    bottom:20px;
     
 }
 
@@ -38,10 +41,7 @@ body {
     right:9px;
 }
 
-.city{
-    
-}
 
 .head p{
-    margin-left:auto;
+    margin-left: 10px;
 }
