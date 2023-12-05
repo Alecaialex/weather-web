@@ -14,4 +14,36 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 200px rgba(0, 0, 0, 0.8);
     text-align: center;
+    display:flex;
+    flex-direction: column;
+}
+
+.head{
+    text-align: center;
+    border-bottom: 2px dotted grey ;
+    position:relative;
+    bottom:20px;
+    
+}
+
+.head ul{
+    align-items: center;
+    display:flex;
+    flex-direction: row;
+    padding:0;
+
+    
+}
+
+.head img{
+    display: flex;
+    position:relative;
+    right:9px;
+}
+
+
+.head p{
+    margin-left: 10px;
+}
+=======
 }
