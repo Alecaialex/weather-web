@@ -24,8 +24,10 @@ def get_weather():
 
     try:
         current_data = weather_data['current']
-        temperature_celsius = round(current_data['temp_c'])
-        feelslike = round(current_data['feelslike_c'])
+        temperature_c = round(current_data['temp_c'])
+        feelslike_c = round(current_data['feelslike_c'])
+        temperature_f = round(current_data['temp_f'])
+        feelslike_f = round(current_data['feelslike_f'])
         description = current_data['condition']['text']
         descriptionicon = current_data['condition']['icon']
         wind_dir = current_data['wind_dir']
@@ -34,9 +36,10 @@ def get_weather():
         precip = current_data.get('precip_mm', 'N/A')
         isday = current_data['is_day']
 
-        return render_template('weather.html', city=city, temperature=temperature_celsius, feelslike=feelslike,
-                           description=description, wind_dir=wind_dir, wind_speed=wind_speed, humidity=humidity,
-                           precip=precip, isday=isday, descriptionicon=descriptionicon)
+        return render_template('weather.html', city=city, temperature_c=temperature_c, feelslike_c=feelslike_c,
+                            temperature_f=temperature_f, feelslike_f=feelslike_f, description=description, wind_dir=wind_dir, 
+                            wind_speed=wind_speed, humidity=humidity,
+                            precip=precip, isday=isday, descriptionicon=descriptionicon)
 
     except KeyError as e:
         print(f"Error: {e}")
