@@ -56,16 +56,3 @@ function toggleTemperatureUnit() {
         flElement.textContent = 'Feels like: ' + `${feelslike_c}ºC`
     }
 }
-
-function toggleFeelsLike() {
-    
-}
-
-const body = document.getElementById('weatherBody');
-const isDay = body.getAttribute('data-isday');
-
-if (isDay === '1') {
-    body.style.background = 'linear-gradient(#e2fdfd, #88c8ff)';
-} else {
-    body.style.background = 'linear-gradient(#0b5a92, #043570)';
-}
